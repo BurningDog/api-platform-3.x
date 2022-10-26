@@ -85,6 +85,8 @@
         "post-update-cmd": [
             "@auto-scripts"
         ],
+        "php-lint": "php-cs-fixer fix --dry-run --diff",
+        "php-cs-fixer": "php-cs-fixer fix -v",
         "phpunit": "php bin/phpunit",
         "phpunit-cov": "php bin/phpunit --coverage-clover build/logs/phpunit/clover.xml --coverage-html build/logs/phpunit/html"
     },
