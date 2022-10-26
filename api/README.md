@@ -29,6 +29,6 @@ composer run php-lint
 composer run php-cs-fixer
 ```
 
-The first command will show linting issues with files; the second will fix them. The former command also runs on PRs via a [Github workflow](vendor/api-platform/schema-generator/.github/workflows/ci.yml)
+The first command will show linting issues with files; the second will fix them. The former command also runs on PRs via a [Github workflow](../.github/workflows/ci.yml)
 
 If you're using VS Code then install the [junstyle.php-cs-fixer](https://marketplace.visualstudio.com/items?itemName=junstyle.php-cs-fixer) plugin. PHPStorm should integrate `php-cs-fixer` out of the box.
