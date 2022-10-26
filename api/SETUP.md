@@ -16,14 +16,14 @@ Link the site with [Valet](https://laravel.com/docs/9.x/valet):
 
 ```sh
 cd public
-valet link api.quotethiswoman
+valet link api.newsite
 valet secure
 valet open
 ```
 
-This will open [https://api.quotethiswoman.test/](https://api.quotethiswoman.test/) in a browser and you should see OpenApi docs.
+This will open [https://api.newsite.test/](https://api.newsite.test/) in a browser and you should see OpenApi docs.
 
-If you don't have Valet then using nginx/apache/whatever you use, create a new site pointing at the `public` folder and make sure it is available at [https://api.quotethiswoman.test/](https://api.quotethiswoman.test/)
+If you don't have Valet then using nginx/apache/whatever you use, create a new site pointing at the `public` folder and make sure it is available at [https://api.newsite.test/](https://api.newsite.test/)
 
 ## Database - postgres
 
@@ -31,8 +31,8 @@ Why postgres? API Platform prefers it over MySQL. MySQL could also be used, but 
 
 1. Install postgres (on a Mac, this is with Homebrew - `brew install pgsql`).
 2. Connect to it with a client - [DBeaver](https://dbeaver.io/) is recommended.
-3. Create a new database, the name could be `quote_this_woman_api_platform`.
-4. Create a new `test` database, the name could be `quote_this_woman_api_platform_test`
+3. Create a new database, the name could be `newsite_api_platform`.
+4. Create a new `test` database, the name could be `newsite_api_platform_test`
 5. Locally on Mac, your system username will be your default user without a password.
 
 ### Database credentials
@@ -44,11 +44,11 @@ cp .env.test .env.test.local
 
 Then, in `.env.local` edit the `DATABASE_URL` connection string. Mine looks like follows:
 
-`DATABASE_URL="postgresql://rs:@127.0.0.1:5432/quote_this_woman_api_platform?serverVersion=14&charset=utf8"`
+`DATABASE_URL="postgresql://rs:@127.0.0.1:5432/newsite_api_platform?serverVersion=14&charset=utf8"`
 
 In `.env.test.local` add the following:
 
-`DATABASE_URL="postgresql://rs:@127.0.0.1:5432/quote_this_woman_api_platform?serverVersion=14&charset=utf8"`
+`DATABASE_URL="postgresql://rs:@127.0.0.1:5432/newsite_api_platform?serverVersion=14&charset=utf8"`
 
 Yes, it looks the same, but Symfony will always append a `_test` to the database name in the test environment.
 
