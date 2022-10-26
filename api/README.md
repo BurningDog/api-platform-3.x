@@ -4,11 +4,11 @@ The API will be here.
 
 Refer to the [Getting Started Guide](https://api-platform.com/docs/distribution) for more information. If you'd like to not use Docker (hint: it's a _lot_ more work to do manual setup) then view [SETUP.md](SETUP.md).
 
-This starter template is the standard API Platform code (3.0.0) with some additional helpful things added:
+This starter template is the standard [API Platform](https://api-platform.com/) release [3.0.0](https://github.com/api-platform/api-platform/releases) with some additional helpful things added:
 
 * manual setup documentation
 * disabling Mercure
-* testing documentation
+* testing documentation (include code coverage)
 * php-cs-fixer integration
 
 ## Helpful development things
