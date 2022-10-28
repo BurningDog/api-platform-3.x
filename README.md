@@ -1,5 +1,11 @@
 <h1 align="center"><a href="https://api-platform.com"><img src="https://api-platform.com/logo-250x250.png" alt="API Platform"></a></h1>
 
+## Newsite API
+
+This holds the code for the newsite API, which is in the [api](/api) folder. Open the [README](/api/README.md) file to get started.
+
+## API Platform
+
 API Platform is a next-generation web framework designed to easily create API-first projects without compromising extensibility
 and flexibility:
 

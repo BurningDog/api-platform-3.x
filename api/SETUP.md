@@ -2,6 +2,10 @@
 
 Much easier to use Docker - see [Getting Started Guide](https://api-platform.com/docs/distribution) for how. If you really _want_ to use Valet, PHP, and Postgres (all via HomeBrew), then read on.
 
+## Find/replace the site name
+
+Search for `api.newsite` in the `api` folder and replace with the site name you'd like to use. Note: this should only replace values in `.env` and `SETUP.md` files.
+
 ## PHP
 
 Ensure you're running php 8.1 (`brew install php`). Then:
@@ -9,21 +13,6 @@ Ensure you're running php 8.1 (`brew install php`). Then:
 ```sh
 composer install
 ```
-
-## Web server - Valet
-
-Link the site with [Valet](https://laravel.com/docs/9.x/valet):
-
-```sh
-cd public
-valet link api.newsite
-valet secure
-valet open
-```
-
-This will open [https://api.newsite.test/](https://api.newsite.test/) in a browser and you should see OpenApi docs.
-
-If you don't have Valet then using nginx/apache/whatever you use, create a new site pointing at the `public` folder and make sure it is available at [https://api.newsite.test/](https://api.newsite.test/)
 
 ## Database - postgres
 
@@ -63,7 +52,24 @@ php bin/console doctrine:migrations:migrate --env=test
 
 Then, using DBeaver, take a look at your database and ensure that some tables exist.
 
+## Web server - Valet
+
+Link the site with [Valet](https://laravel.com/docs/9.x/valet):
+
+```sh
+cd public
+valet link api.newsite
+valet secure
+valet open
+```
+
+This will open [https://api.newsite.test/](https://api.newsite.test/) in a browser and you should see OpenApi docs.
+
+If you don't have Valet then using nginx/apache/whatever you use, create a new site pointing at the `public` folder and make sure it is available at [https://api.newsite.test/](https://api.newsite.test/)
+
 ## Test setup
+
+On first run, do `composer run phpunit`, which will install the necessary packages.
 
 Tests can be run with either of the following:
 
