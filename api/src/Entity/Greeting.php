@@ -9,12 +9,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * This is a dummy entity. Remove it!
  */
-#[ApiResource(mercure: true)]
+#[ApiResource(mercure: false)]
 #[ORM\Entity]
 class Greeting
 {
     /**
-     * The entity ID
+     * The entity ID.
      */
     #[ORM\Id]
     #[ORM\Column(type: 'integer')]
@@ -22,7 +22,7 @@ class Greeting
     private ?int $id = null;
 
     /**
-     * A nice person
+     * A nice person.
      */
     #[ORM\Column]
     #[Assert\NotBlank]
