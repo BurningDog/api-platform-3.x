@@ -11,6 +11,10 @@ This starter template is the standard [API Platform](https://api-platform.com/) 
 * testing documentation (include code coverage)
 * php-cs-fixer integration
 
+## Next setup steps
+
+1. Customise the User login and registration setup - see [SETUP-USER.md](SETUP-USER.md).
+
 ## Helpful development things
 
 Add this alias to your shell alias file:
