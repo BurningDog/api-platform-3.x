@@ -26,7 +26,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @see \App\OpenApi\OpenApiFactory for OpenApi documentation.
+     * @see \App\OpenApi\PathItem\OpenApiLogout for OpenApi documentation.
      */
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void

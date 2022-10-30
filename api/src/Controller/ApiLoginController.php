@@ -12,7 +12,7 @@ use Symfony\Component\Security\Http\Attribute\CurrentUser;
 class ApiLoginController extends AbstractController
 {
     /**
-     * @see \App\OpenApi\OpenApiFactory for OpenApi documentation.
+     * @see \App\OpenApi\PathItem\OpenApiLogin for OpenApi documentation.
      */
     #[Route('/login-json', name: 'app_api_login')]
     public function index(#[CurrentUser] ?User $user): JsonResponse
@@ -33,7 +33,7 @@ class ApiLoginController extends AbstractController
     /**
      * Debugging to check if the session cookie is working.
      *
-     * @see \App\OpenApi\OpenApiFactory for OpenApi documentation.
+     * @see \App\OpenApi\PathItem\OpenApiLoginCheck for OpenApi documentation.
      */
     #[Route(path: '/loggedin', name: 'app_logged_in')]
     public function loginCheck(#[CurrentUser] ?User $user): JsonResponse
