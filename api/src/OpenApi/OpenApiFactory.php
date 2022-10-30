@@ -26,7 +26,7 @@ class OpenApiFactory implements OpenApiFactoryInterface
         $openApi = $this->decorated->__invoke($context);
 
         $pathItem = $this->openApiLogin->pathItem();
-        $openApi->getPaths()->addPath('/login-json', $pathItem);
+        $openApi->getPaths()->addPath('/login', $pathItem);
 
         $pathItem = $this->openApiLoginCheck->pathItem();
         $openApi->getPaths()->addPath('/loggedin', $pathItem);

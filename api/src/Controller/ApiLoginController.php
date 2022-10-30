@@ -14,7 +14,7 @@ class ApiLoginController extends AbstractController
     /**
      * @see \App\OpenApi\PathItem\OpenApiLogin for OpenApi documentation.
      */
-    #[Route('/login-json', name: 'app_api_login')]
+    #[Route('/login', name: 'app_api_login')]
     public function index(#[CurrentUser] ?User $user): JsonResponse
     {
         if (null === $user) {
