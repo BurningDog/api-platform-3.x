@@ -25,6 +25,9 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
+    /**
+     * @see \App\OpenApi\OpenApiFactory for OpenApi documentation.
+     */
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void
     {
