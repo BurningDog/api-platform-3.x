@@ -16,11 +16,35 @@ security:
         main:
             lazy: true
             provider: app_user_provider
+
+            # https://symfonycasts.com/screencast/api-platform-security/json-login
+            # https://symfony.com/doc/current/security.html#json-login
+            json_login:
+                check_path: app_api_login
+                username_path: email
+                password_path: password
+
             custom_authenticator: App\Security\AppCustomAuthenticator
             logout:
                 path: app_logout
                 # where to redirect after logout
                 # target: app_any_route
+
+            # configure the maximum login attempts
+            # https://symfony.com/doc/current/security.html#limiting-login-attempts
+            login_throttling:
+                max_attempts: 4          # per minute ...
+                # interval: '15 minutes' # ... or in a custom period
+
+            # Keep the user logged in
+            # https://symfony.com/doc/current/security/remember_me.html
+            remember_me:
+                secret:   '%kernel.secret%' # required
+                lifetime: 946080000  # 30 years in seconds
+                # by default, the feature is enabled by checking a
+                # checkbox in the login form (see below), uncomment the
+                # following line to always enable it.
+                always_remember_me: true
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
@@ -28,11 +52,23 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
 
+    # role hierarchy
+    # https://symfony.com/doc/current/security.html#roles
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
+    # https://symfony.com/doc/current/security.html#securing-url-patterns-access-control
     access_control:
+        # require ROLE_ADMIN for /admin*
         # - { path: ^/admin, roles: ROLE_ADMIN }
+
         # - { path: ^/profile, roles: ROLE_USER }
+
+        # Users must be logged in to access API posts and comments
+        # - { path: ^/api/(post|comment)/\d+$, roles: ROLE_USER }
 
 when@test:
     security:
