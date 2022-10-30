@@ -41,7 +41,7 @@ class OpenApiLogin implements OpenApiPathItemInterface
                         'description' => 'If either of the body fields are missing',
                     ],
                     '401' => [
-                        'description' => 'If the supplied credentials are invalid',
+                        'description' => 'If the supplied credentials are invalid, or too many failed attempts in 1 minute',
                     ],
                 ]
             )
