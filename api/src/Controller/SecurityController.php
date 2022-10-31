@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-    #[Route(path: '/login-app', name: 'app_login')]
+    #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         // TODO: once the user is logged in, redirect them somewhere.
@@ -28,7 +28,7 @@ class SecurityController extends AbstractController
     /**
      * @see \App\OpenApi\PathItem\OpenApiLogout for OpenApi documentation.
      */
-    #[Route(path: '/logout', name: 'app_logout')]
+    #[Route(path: ['/logout', '/auth/logout'], name: 'app_logout')]
     public function logout(): void
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');

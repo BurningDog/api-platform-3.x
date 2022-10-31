@@ -26,13 +26,13 @@ class OpenApiFactory implements OpenApiFactoryInterface
         $openApi = $this->decorated->__invoke($context);
 
         $pathItem = $this->openApiLogin->pathItem();
-        $openApi->getPaths()->addPath('/login', $pathItem);
+        $openApi->getPaths()->addPath('/auth/login', $pathItem);
 
         $pathItem = $this->openApiLoginCheck->pathItem();
-        $openApi->getPaths()->addPath('/loggedin', $pathItem);
+        $openApi->getPaths()->addPath('/auth/loggedin', $pathItem);
 
         $pathItem = $this->openApiLogout->pathItem();
-        $openApi->getPaths()->addPath('/logout', $pathItem);
+        $openApi->getPaths()->addPath('/auth/logout', $pathItem);
 
         return $openApi;
     }
