@@ -11,4 +11,5 @@ api_platform:
 
     # OpenAPI spec
     # https://api-platform.com/docs/core/openapi/
+    # https://swagger.io/docs/specification/
     # openapi:
