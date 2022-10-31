@@ -5,6 +5,10 @@ api_platform:
     # mercure: ~
     # Good cache defaults for REST APIs
     defaults:
-        stateless: true
+        stateless: false
         cache_headers:
             vary: ['Content-Type', 'Authorization', 'Origin']
+
+    # OpenAPI spec
+    # https://api-platform.com/docs/core/openapi/
+    # openapi:
